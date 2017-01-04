@@ -7,9 +7,10 @@
       'thinkster.routes',
       'thinkster.authentication',
       'thinkster.layout',
-      'thinkster.posts',
-      'thinkster.utils',
-      'thinkster.profiles'
+      'thinkster.dashboard',
+      'thinkster.widgets',
+      'thinkster.profiles',
+      'ngCountTo'
     ]);
 
   angular

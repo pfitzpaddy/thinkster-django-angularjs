@@ -9,7 +9,7 @@
     .module('thinkster.layout.controllers')
     .controller('IndexController', IndexController);
 
-  IndexController.$inject = ['$scope', 'Authentication', 'Posts', 'Snackbar'];
+  IndexController.$inject = ['$scope', 'Authentication'];
 
   /**
   * @namespace IndexController
@@ -18,7 +18,8 @@
     var vm = this;
 
     vm.isAuthenticated = Authentication.isAuthenticated();
-    vm.posts = [];
+    
+    vm.dashboard = {}
 
     activate();
 
@@ -28,33 +29,46 @@
     * @memberOf thinkster.layout.controllers.IndexController
     */
     function activate() {
-      Posts.all().then(postsSuccessFn, postsErrorFn);
 
-      $scope.$on('post.created', function (event, post) {
-        vm.posts.unshift(post);
-      });
+      vm.dashboard.title = 'HELLO WORLD!';
+      
+      vm.dashboard.rows = [{
+        columns: [{
+          css: 'col s12 m4',
+          widget: {
+            type: 'stats',
+            style: 'text-align: center;',
+            css: 'card-panel stats-card white grey-text text-darken-2', // 'card' with 20px padding as default & 'white card-panel grey-text text-darken-2' should be default
+            config: {
+              title: 'Figure A',
+              data: { value: 1126 }
+            }
+          }
+        },{
+          css: 'col s12 m4',
+          widget: {
+            type: 'stats',
+            style: 'text-align: center;',
+            css: 'card-panel stats-card white grey-text text-darken-2', // 'card' with 20px padding as default & 'white card-panel grey-text text-darken-2' should be default
+            config: {
+              title: 'Figure B',
+              data: { value: 1033 }
+            }
+          }
+        },{
+          css: 'col s12 m4',
+          widget: {
+            type: 'stats',
+            style: 'text-align: center;',
+            css: 'card-panel stats-card white grey-text text-darken-2', // 'card' with 20px padding as default & 'white card-panel grey-text text-darken-2' should be default
+            config: {
+              title: 'Figure C',
+              data: { value: 726 }
+            }
+          }
+        }]
+      }]
 
-      $scope.$on('post.created.error', function () {
-        vm.posts.shift();
-      });
-
-
-      /**
-      * @name postsSuccessFn
-      * @desc Update posts array on view
-      */
-      function postsSuccessFn(data, status, headers, config) {
-        vm.posts = data.data;
-      }
-
-
-      /**
-      * @name postsErrorFn
-      * @desc Show snackbar with error
-      */
-      function postsErrorFn(data, status, headers, config) {
-        Snackbar.error(data.error);
-      }
     }
   }
 })();

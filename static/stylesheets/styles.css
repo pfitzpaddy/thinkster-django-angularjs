@@ -1,3 +1,17 @@
+
+nav {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.container {
+  width: 92%;
+}
+
+.row {
+  margin-bottom: 0px;
+}
+
 .no-posts-here {
   text-align: center;
 }
@@ -18,4 +32,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.card.post {
+	padding: 20px;
 }
