@@ -1,0 +1,30 @@
+
+<!-- dashboard -->
+<div ng-class="{ 'container': vm.layout.container }">
+  <!-- rows -->
+  <div ng-repeat="row in vm.dashboard.rows">
+    <div class="row">
+      <!-- columns -->
+      <div ng-repeat="column in row.columns">
+        <!-- style -->
+        <div class="{{ column.css }}">
+          <div class="{{ column.widget.css }}" style="{{ column.widget.style }}">
+            
+            <!-- html -->
+            <!-- <html ng-if="column.widget.type === 'html'" widget="column.widget"></html> -->
+
+            <!-- stats -->
+            <stats ng-if="column.widget.type === 'stats'" widget="column.widget"></stats>
+
+            <!-- leaflet -->
+            <map ng-if="column.widget.type === 'map'" widget="column.widget"></map>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

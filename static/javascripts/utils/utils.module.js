@@ -2,10 +2,10 @@
   'use strict';
 
   angular
-    .module('thinkster.utils', [
-      'thinkster.utils.services'
+    .module('reporthub.utils', [
+      'reporthub.utils.services'
     ]);
 
   angular
-    .module('thinkster.utils.services', []);
+    .module('reporthub.utils.services', []);
 })();

@@ -2,15 +2,15 @@
   'use strict';
 
   angular
-    .module('thinkster.authentication', [
-      'thinkster.authentication.controllers',
-      'thinkster.authentication.services'
+    .module('reporthub.authentication', [
+      'reporthub.authentication.controllers',
+      'reporthub.authentication.services'
     ]);
 
   angular
-    .module('thinkster.authentication.controllers', []);
+    .module('reporthub.authentication.controllers', []);
 
   angular
-    .module('thinkster.authentication.services', ['ngCookies']);
+    .module('reporthub.authentication.services', ['ngCookies']);
     
 })();

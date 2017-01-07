@@ -1,0 +1,27 @@
+  
+  <!-- TITLE -->
+  <!-- <directive title></directive> -->
+      <!-- title directive -->
+      <!-- https://github.com/pfitzpaddy/ngm-dashboard-framework/blob/master/src/templates/dashboard-title.html -->
+
+<div ng-class="{ 'container': vm.layout.container }">
+  <div class="row" style="border-bottom: 3px solid #ee6e73">
+    <div class="col s12">
+      <h2 style="font-weight:100;">
+
+        <!-- sidenav menu btn -->
+        <a href="javascript:void(0)" 
+            ng-if="vm.header.menu" 
+            data-activates="slide-out" 
+            class="button-collapse top-nav full"
+            ng-class="{ 'show-on-large': !vm.layout.sidenav.fixed, 'hide-on-large-only': vm.layout.sidenav.fixed }">
+          <i class="material-icons grey-text text-darken-2">menu</i>
+        </a>
+
+        <!-- title -->
+        {{ vm.header.title }}</h2>
+
+      </h2>
+    </div>
+  </div>
+</div>

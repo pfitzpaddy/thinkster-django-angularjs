@@ -2,47 +2,53 @@
 {% load staticfiles %}
 
 {% compress js %}
+<!-- vendor -->
 <script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/materialize/dist/js/materialize.min.js' %}"></script>
-
+<!-- angular -->
 <script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
 <script type="text/javascript" src="{% static 'bower_components/angular-filter-count-to/dist/angular-filter-count-to.min.js' %}"></script>
-
 <!-- leaflet -->
-<script src="{% static 'bower_components/leaflet/dist/leaflet-src.js' %}"></script>
-<script src="{% static 'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/leaflet/dist/leaflet-src.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js' %}"></script>
 
-<!-- thinkster app -->
-<script type="text/javascript" src="{% static 'javascripts/thinkster.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/thinkster.config.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/thinkster.routes.js' %}"></script>
+<!-- reporthub app -->
+<script type="text/javascript" src="{% static 'javascripts/app/reporthub.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/app/reporthub.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/app/reporthub.routes.js' %}"></script>
 <!-- authentication -->
 <script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/authentication/controllers/login.controller.js' %}"></script>
+
 <!-- layout -->
 <script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/layout/controllers/navbar.controller.js' %}"></script>
 <script type="text/javascript" src="{% static 'javascripts/layout/controllers/index.controller.js' %}"></script>
+<!-- navbar -->
+<script type="text/javascript" src="{% static 'javascripts/layout/navbar/navbar.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/navbar/directives/navbar.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/navbar/controllers/navbar.controller.js' %}"></script>
+<!-- sidenav -->
+<script type="text/javascript" src="{% static 'javascripts/layout/sidenav/sidenav.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/sidenav/directives/sidenav.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/sidenav/controllers/sidenav.controller.js' %}"></script>
+<!-- header -->
+<script type="text/javascript" src="{% static 'javascripts/layout/header/header.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/header/directives/header.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/header/controllers/header.controller.js' %}"></script>
 <!-- dashboard -->
-<script type="text/javascript" src="{% static 'javascripts/dashboard/dashboard.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/dashboard/directives/dashboard.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/dashboard/controllers/dashboard.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/dashboard/dashboard.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/dashboard/directives/dashboard.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/dashboard/controllers/dashboard.controller.js' %}"></script>
 <!-- widgets -->
-<script type="text/javascript" src="{% static 'javascripts/widgets/widgets.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/widgets/widgets.module.js' %}"></script>
 <!-- stats -->
-<script type="text/javascript" src="{% static 'javascripts/widgets/stats/directives/stats.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/widgets/stats/controllers/stats.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/widgets/stats/directives/stats.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/widgets/stats/controllers/stats.controller.js' %}"></script>
 <!-- leaflet -->
-<script type="text/javascript" src="{% static 'javascripts/widgets/leaflet/directives/leaflet.directive.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/widgets/leaflet/controllers/leaflet.controller.js' %}"></script>
-
-<!-- profiles -->
-<script type="text/javascript" src="{% static 'javascripts/profiles/profiles.module.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/profiles/services/profile.service.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/profiles/controllers/profile.controller.js' %}"></script>
-<script type="text/javascript" src="{% static 'javascripts/profiles/controllers/profile-settings.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/widgets/leaflet/directives/leaflet.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/widgets/leaflet/controllers/leaflet.controller.js' %}"></script>
 {% endcompress %}
