@@ -17,7 +17,32 @@
   function NavbarController($scope, Authentication) {
     var vm = this;
 
+    // check style guide
+
+    vm.isAuthenticated = Authentication.isAuthenticated();
+
+    vm.user = Authentication.getAuthenticatedAccount();
+
     vm.logout = logout;
+
+    activate();
+
+    /**
+    * @name activate
+    * @desc Actions to be performed when this controller is instantiated
+    * @memberOf thinkster.posts.controllers.DashboardController
+    */
+    function activate() {
+
+      // (should be in nav controller)
+      $('.dropdown-button').dropdown();
+
+      // adds twirl to menu (should be in side-nav controller!)
+      $('.rotate').click(function(){
+        $(this).toggleClass('down'); 
+      });      
+      
+    }
 
     /**
     * @name logout

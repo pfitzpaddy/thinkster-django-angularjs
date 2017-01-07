@@ -10,6 +10,7 @@
       'thinkster.dashboard',
       'thinkster.widgets',
       'thinkster.profiles',
+      'leaflet-directive',
       'ngCountTo'
     ]);
 

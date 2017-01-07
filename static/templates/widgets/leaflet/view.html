@@ -1,0 +1,27 @@
+
+<style>
+
+  .leaflet-top,
+  .leaflet-bottom {
+    z-index: 996;
+  }
+
+  .leaflet-popup .count {
+    font-weight:100;
+    font-size:3rem;
+    line-height:3rem;
+  }
+
+</style>
+
+<!-- <leaflet 
+  id="{{ leaflet.id }}"
+  width="100%" height="{{ leaflet.height }}"
+  defaults="leaflet.defaults"
+  markers="leaflet.markers"
+  layers="leaflet.layers">
+</leaflet>
+ -->
+
+
+ <leaflet height="{{ vm.height }}" lf-center="vm.center" layers="vm.layers" width="100%" height="480px"></leaflet>

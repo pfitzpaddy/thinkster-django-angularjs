@@ -1,0 +1,14 @@
+
+  <!-- display stats -->
+  <i class="{{ stats.display.iconClass }}" style="{{ stats.display.iconStyle }}">{{ stats.display.icon }}</i>
+	<span class="count">
+		<span
+			value="0" 
+			ng-count-to="{{ stats.data.value }}" 
+			duration="{{ stats.display.duration }}"
+			filter="{{ stats.display.filter }}"
+			params="{{ stats.display.params }}"
+			fraction-size="{{ stats.display.fractionSize }}">
+		</span>{{ stats.display.postfix }}</span>
+
+	<div class="grey-text text-darken-2">{{ stats.title }}</div>
