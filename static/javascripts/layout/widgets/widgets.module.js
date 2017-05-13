@@ -11,6 +11,8 @@
     .module('reporthub.layout.widgets.directives', []);
 
   angular
-    .module('reporthub.layout.widgets.controllers', []);
+    .module('reporthub.layout.widgets.controllers', [
+      'leaflet-directive'
+    ]);
 
 })();

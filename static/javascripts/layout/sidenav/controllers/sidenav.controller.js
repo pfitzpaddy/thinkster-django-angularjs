@@ -17,13 +17,10 @@
   function SidenavController($scope, $timeout, Authentication) {
     var vm = this;
 
-    // check style guide && why auth is not being retrieved from $cookies
-
-    vm.isAuthenticated = Authentication.isAuthenticated();
-
-    vm.user = Authentication.getAuthenticatedAccount();
+    vm.layout = $scope.layout
 
     activate();
+
 
     /**
     * @name activate
@@ -33,7 +30,7 @@
     function activate() {
 
       // defaults
-      vm.sidenav = {
+      var sidenav = {
         fixed: false,
         options: {
           menuWidth: 300,
@@ -44,24 +41,19 @@
       }
 
       // Merge defaults with config
-      vm.sidenav = angular.merge({}, vm.sidenav, $scope.layout.sidenav);
+      vm.layout.sidenav = angular.merge({}, sidenav, $scope.layout.sidenav);
 
-      // $timeout issue 
-        //https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      // $timeout issue https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
       $timeout(function(){
-        
-        if (!vm.sidenav.fixed) {
-          $('body').css('padding-left','0px');
-        }
-
-        // init materialze side-nav
-        $('.button-collapse').sideNav(vm.sidenav.options);
-
         // adds twirl to icons
         $('.rotate').click(function(){
           $(this).toggleClass('down'); 
         });
-
+        if (!vm.layout.sidenav.fixed) {
+          $('body').css('padding-left','0px');
+        }
+        // init materialze side-nav
+        // $('.button-collapse').sideNav(vm.layout.sidenav.options);
       },0);
 
     }

@@ -2,14 +2,14 @@
 <!-- dashboard -->
 <div ng-class="{ 'container': vm.layout.container }">
   <!-- rows -->
-  <div ng-repeat="row in vm.dashboard.rows">
+  <div ng-repeat="row in vm.layout.dashboard.rows">
     <div class="row">
       <!-- columns -->
       <div ng-repeat="column in row.columns">
         <!-- style -->
         <div class="{{ column.css }}">
           <div class="{{ column.widget.css }}" style="{{ column.widget.style }}">
-            
+
             <!-- html -->
             <!-- <html ng-if="column.widget.type === 'html'" widget="column.widget"></html> -->
 

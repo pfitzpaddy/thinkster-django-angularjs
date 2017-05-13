@@ -17,8 +17,6 @@
   function LeafletController($scope) {
     var vm = this;
 
-    vm.leaflet = {};
-
     activate();
 
 

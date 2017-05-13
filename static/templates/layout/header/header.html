@@ -11,15 +11,15 @@
 
         <!-- sidenav menu btn -->
         <a href="javascript:void(0)" 
-            ng-if="vm.header.menu" 
+            ng-if="vm.layout.header.menu" 
             data-activates="slide-out" 
             class="button-collapse top-nav full"
             ng-class="{ 'show-on-large': !vm.layout.sidenav.fixed, 'hide-on-large-only': vm.layout.sidenav.fixed }">
-          <i class="material-icons grey-text text-darken-2">menu</i>
+          <i class="material-icons grey-text text-darken-2 rotate">menu</i>
         </a>
 
         <!-- title -->
-        {{ vm.header.title }}</h2>
+        {{ vm.layout.header.title }}</h2>
 
       </h2>
     </div>

@@ -9,19 +9,15 @@
     .module('reporthub.layout.navbar.controllers')
     .controller('NavbarController', NavbarController);
 
-  NavbarController.$inject = ['$scope', '$timeout', 'Authentication'];
+  NavbarController.$inject = ['$scope', '$timeout'];
 
   /**
   * @namespace NavbarController
   */
-  function NavbarController($scope, $timeout, Authentication) {
+  function NavbarController($scope, $timeout) {
     var vm = this;
 
-    // check style guide && why auth is not being retrieved from $cookies
-
-    vm.isAuthenticated = Authentication.isAuthenticated();
-
-    vm.user = Authentication.getAuthenticatedAccount();
+    vm.layout = $scope.layout;
 
     vm.logout = logout;
 
@@ -35,17 +31,22 @@
     function activate() {
 
       // defaults
-      vm.navbar = {
+      var navbar = {
+        logo: 'iMMAP',
         dropdown: true
       }
 
       // Merge defaults with config
-      vm.navbar = angular.merge({}, vm.navbar, $scope.layout.navbar);
+      vm.layout.navbar = angular.merge({}, navbar, $scope.layout.navbar);
 
-      // $timeout issue 
-        //https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
+      // $timeout issue https://www.bennadel.com/blog/2892-typeerror-cannot-read-property-childnodes-of-undefined-in-angularjs.htm
       $timeout(function(){ 
-        if (vm.navbar.dropdown) {
+        // adds twirl to icons
+        $('.rotate').click(function(){
+          $(this).toggleClass('down'); 
+        });
+        // activate dropdown
+        if (vm.layout.navbar.dropdown) {
           $('.dropdown-button').dropdown(); 
         }
       },0);

@@ -15,7 +15,9 @@
   * @namespace DashboardController
   */
   function DashboardController($scope) {
-    var vm = this;    
+    var vm = this;
+
+    vm.layout = $scope.layout;
 
     activate();
 
@@ -28,10 +30,10 @@
     function activate() {
      
       // defaults
-      vm.dashboard = {};
+      var dashboard = {};
 
       // Merge defaults with config
-      vm.dashboard = angular.merge({}, vm.dashboard, $scope.layout.dashboard);
+      vm.layout.dashboard = angular.merge({}, dashboard, $scope.layout.dashboard);
 
     }
   }

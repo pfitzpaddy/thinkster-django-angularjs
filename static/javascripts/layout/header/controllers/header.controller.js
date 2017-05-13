@@ -9,7 +9,7 @@
     .module('reporthub.layout.header.controllers')
     .controller('HeaderController', HeaderController);
 
-  HeaderController.$inject = ['$scope', '$timeout', 'Authentication'];
+  HeaderController.$inject = ['$scope', '$timeout'];
 
   /**
   * @namespace HeaderController
@@ -17,9 +17,7 @@
   function HeaderController($scope, $timeout, Authentication) {
     var vm = this;
 
-    vm.isAuthenticated = Authentication.isAuthenticated();
-
-    vm.user = Authentication.getAuthenticatedAccount();
+    vm.layout = $scope.layout;
 
     activate();
 
@@ -31,12 +29,12 @@
     function activate() {
 
       // defaults
-      vm.header = {
+      var header = {
         menu: !$scope.layout.navbar
       }
 
       // Merge defaults with config
-      vm.header = angular.merge({}, vm.header, $scope.layout.header);
+      vm.layout.header = angular.merge({}, header, $scope.layout.header);
 
     }
   }

@@ -7,7 +7,6 @@
       'reporthub.routes',
       'reporthub.authentication',
       'reporthub.layout',
-      'leaflet-directive',
       'ngCountTo'
     ]);
 
