@@ -17,7 +17,10 @@
     "angular-filter-count-to": "~0.0.9",
     "angular-leaflet-directive": "~0.10.0",
     "leaflet": "~0.7.5",
-    "materialize": "~0.97.7",
+    "materialize": "~0.98.2",
     "jquery": "~2.1.1"
+  },
+  "resolutions": {
+    "angular": "1.4.2"
   }
 }

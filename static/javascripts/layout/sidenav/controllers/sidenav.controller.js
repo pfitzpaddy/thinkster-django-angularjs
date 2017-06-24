@@ -53,7 +53,7 @@
           $('body').css('padding-left','0px');
         }
         // init materialze side-nav
-        // $('.button-collapse').sideNav(vm.layout.sidenav.options);
+        $('.button-collapse').sideNav(vm.layout.sidenav.options);
       },0);
 
     }
