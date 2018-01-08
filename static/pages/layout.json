@@ -1,0 +1,58 @@
+{
+  "layout": {
+    "container": true,
+    "navbar": {
+      "logo": "navbar"
+    },
+    "sidenav": {
+      "fixed": true
+    },
+    "header": {
+      "title": "header"
+    },
+    "dashboard": {
+      "rows": [
+        {
+          "columns": [
+            {
+              "css": "col s12 m4",
+              "widget": {
+                "type": "stats",
+                "style": "padding:0px;",
+                "css": "card-panel stats-card white grey-text text-darken-2",
+                "config": {
+                  "templateUrl": "/static/templates/layout/widgets/stats/template/chart.html"
+                }
+              }
+            },
+            {
+              "css": "col s12 m4",
+              "widget": {
+                "type": "map",
+                "style": "padding:0px;",
+                "css": "card-panel",
+                "config": {
+                  "height": "115px"
+                }
+              }
+            },
+            {
+              "css": "col s12 m4",
+              "widget": {
+                "type": "stats",
+                "style": "text-align: center;",
+                "css": "card-panel stats-card white grey-text text-darken-2",
+                "config": {
+                  "title": "Figure D",
+                  "data": {
+                    "value": 1726
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

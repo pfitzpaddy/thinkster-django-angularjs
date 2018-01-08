@@ -1,0 +1,25 @@
+{
+  "layout": {
+    "navbar": {
+      "logo": "iMMAP"
+    },
+    "sidenav": {},
+    "dashboard": {
+      "rows": [
+        {
+          "columns": [
+            {
+              "css": "s12 m12 l12",
+              "widget": {
+                "type": "map",
+                "style": "padding:0px; margin-top: 0px !important;",
+                "css": "card-panel",
+                "config": {}
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
